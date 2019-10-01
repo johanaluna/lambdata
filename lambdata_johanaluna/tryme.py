@@ -4,18 +4,12 @@ import numpy
 from sklearn.model_selection import train_test_split
 
 # function to check the null in a data frame and report how many nulls it found
-def reportnulls(b):
+def reportnulls(df):
     """
     Takes a data frame and check de nulls and sum
     the resutls and organizes them from highest to lowest
     """
-    null_counts = b.isnull().sum().sort_values(ascending=False)
-
-    """
-    print results and reset de index that were the name of
-    the columns and convert them into a column
-    """
-    print('null values \n', null_counts.reset_index())
+    null_counts = df.isnull().sum().sort_values(ascending=False)
 
     # return count of null values
     return null_counts
@@ -27,12 +21,12 @@ that means that the target corresponds to 20%
 of the complete data frame
 """
 
-def splitdata(a, target):
+def splitdata(df, name_column_target):
 
-    print('shape of your data frame: ', a.shape)
+    print('shape of your data frame: ', df.shape)
     # Define X and y
-    X = a.drop(columns=target)
-    y = a[target]
+    X = df.drop(columns=name_column_target)
+    y = df[name_column_target]
 
     # we need to do 2 splits
     # 1.(Takes X and y into X_trainval, X_test, y_trainval, y_test)
