@@ -51,7 +51,7 @@ def splitdata(a, target):
     print('X_val shape', X_val.shape)
     print('y_val shape', y_val.shape)
     print('X_test shape', X_test.shape)
-    print('y_test shape', y_test.shape,'\n\n)
+    print('y_test shape', y_test.shape,'\n\n')
 
     # Return the results of the split
     return (X_train, y_train, X_val, y_val, X_test, y_test)
