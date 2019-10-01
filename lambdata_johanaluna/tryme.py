@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 
 def reportnulls(b):
     null_counts = b.isnull().sum().sort_values(ascending=False)
-    print(null_counts.reset_index())
+    print('null values \n', null_counts.reset_index())
     return null_counts
 
 def splitdata(a,target):
