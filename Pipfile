@@ -9,7 +9,6 @@ twine = "*"
 [packages]
 numpy = "*"
 pandas = "*"
-sckit-learn = "*"
 scikit-learn = "*"
 
 [requires]
