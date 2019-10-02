@@ -46,13 +46,5 @@ class Check_Data():
             X_trainval, y_trainval, train_size=0.80,
             test_size=0.20, random_state=42)
 
-        # Print the size the results
-        print('X_train shape', X_train.shape)
-        print('y_train shape', y_train.shape)
-        print('X_val shape', X_val.shape)
-        print('y_val shape', y_val.shape)
-        print('X_test shape', X_test.shape)
-        print('y_test shape', y_test.shape, '\n\n')
-
         # Return the results of the split
         return (X_train, y_train, X_val, y_val, X_test, y_test)
