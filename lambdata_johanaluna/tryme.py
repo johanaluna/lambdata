@@ -3,6 +3,7 @@ import pandas
 import numpy
 from sklearn.model_selection import train_test_split
 
+
 # function to check the null in a data frame and report how many nulls it found
 def reportnulls(df):
     """
@@ -20,6 +21,7 @@ this function split the data in 80% 20%
 that means that the target corresponds to 20%
 of the complete data frame
 """
+
 
 def splitdata(df, name_column_target):
 
@@ -45,7 +47,7 @@ def splitdata(df, name_column_target):
     print('X_val shape', X_val.shape)
     print('y_val shape', y_val.shape)
     print('X_test shape', X_test.shape)
-    print('y_test shape', y_test.shape,'\n\n')
+    print('y_test shape', y_test.shape, '\n\n')
 
     # Return the results of the split
     return (X_train, y_train, X_val, y_val, X_test, y_test)
