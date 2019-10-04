@@ -15,10 +15,10 @@ class Check_Data():
         Takes a data frame and check de nulls and sum
         the resutls and organizes them from highest to lowest
         """
-        null_counts = self.df.isnull().sum().sort_values(ascending=False)
+        self.null_counts = self.df.isnull().sum().sort_values(ascending=False)
 
         # return count of null values
-        return null_counts
+        return self.null_counts
 
     """
     function to split the data into train, validation and test
@@ -32,19 +32,19 @@ class Check_Data():
 
         print('shape of your data frame: ', self.df.shape)
         # Define X and y
-        X = self.df.drop(columns=self.name_column_target)
-        y = self.df[self.name_column_target]
+        self.X = self.df.drop(columns=self.name_column_target)
+        self.y = self.df[self.name_column_target]
 
         # we need to do 2 splits
         # 1.(Takes X and y into X_trainval, X_test, y_trainval, y_test)
-        X_trainval, X_test, y_trainval, y_test = train_test_split(
-            X, y, train_size=0.80, test_size=0.20, random_state=42)
+        self.X_trainval, self.X_test, self.y_trainval, self.y_test = train_test_split(
+            self.X, self.y, train_size=0.80, test_size=0.20, random_state=42)
 
         # 2.(Takes X_trainval, y_trainval and split data
         # into X_train, X_val, y_train, y_val)
-        X_train, X_val, y_train, y_val = train_test_split(
-            X_trainval, y_trainval, train_size=0.80,
+        self.X_train, self.X_val, self.y_train, self.y_val = train_test_split(
+            self.X_trainval, self.y_trainval, train_size=0.80,
             test_size=0.20, random_state=42)
 
         # Return the results of the split
-        return (X_train, y_train, X_val, y_val, X_test, y_test)
+        return (self.X_train, self.y_train, self.X_val, self.y_val, self.X_test, self.y_test)
